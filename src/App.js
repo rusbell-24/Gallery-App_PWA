@@ -1,34 +1,28 @@
-import React, { useCallback, useEffect, useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
+import Header from "./components/Header";
+import { useFetchImg } from "./hooks/useFetchImg";
 
 function App() {
-  const [images, setImages] = useState([]);
-
-  const Peticion = useCallback(async () => {
-    const accesKey = "client_id=kjSbjuaVvtgfxXjTgp2Bo_r-paaQD0lDmZLvm-eH5Xg";
-
-    const route = `https://api.unsplash.com/photos/?per_page=30&${accesKey}`;
-
-    const res = await fetch(route);
-    const data = await res.json();
-
-    setImages(data);
-  });
-
-  useEffect(() => {
-    Peticion();
-  }, []);
+  const [images, handleSubmit] = useFetchImg();
 
   return (
-    <div className="App row m-2">
-      {images.map((img) => {
-        return (
-          <div key={img.id} className="col">
-            <Card urlImg={img.urls.regular} />
-          </div>
-        );
-      })}
+    <div className="App">
+      <Header handleSubmit={handleSubmit} />
+      <div className="container-principal p-4">
+        <div className="row m-2">
+          {images.map((img) => {
+            return (
+              <div
+                key={img.id}
+                className="col bg-dark m-2 p-1 d-flex justify-content-center"
+              >
+                <Card urlImg={img.urls.regular} />
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,9 @@
+.navbar-brand{
+  cursor: pointer;
+}
+
+@media (max-width:767px){
+  .navbar .container-fluid {
+    justify-content: center;
+  }
+}

@@ -1,11 +1,17 @@
 import React from "react";
 import FormInput from "./FormInput";
+import "../stylesheets/Header.css";
 
-const Header = ({ handleSubmit, inicio }) => {
+const Header = ({ handleSubmit, init }) => {
   return (
-    <nav className="navbar bg-dark" data-bs-theme="dark">
+    <nav
+      className="navbar bg-dark fixed-top position-relative"
+      data-bs-theme="dark"
+    >
       <div className="container-fluid px-4">
-        <a className="navbar-brand">Gallery Rusbell</a>
+        <span onClick={init} className="navbar-brand">
+          Gallery Rusbell
+        </span>
         <FormInput submit={handleSubmit} />
       </div>
     </nav>

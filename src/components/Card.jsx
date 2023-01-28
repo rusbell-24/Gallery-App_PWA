@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 const Card = ({ urlImg }) => {
   return (
-    <div className="card" style={{ width: "18rem" }}>
-      <img src={urlImg} className="card-img-top" alt="Imagen.png" />
+    <div className=" gallery-item">
+      <img src={urlImg} className="gallery-img" alt="Imagen.png" />
     </div>
   );
 };

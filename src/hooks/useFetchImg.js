@@ -3,7 +3,8 @@ import { useCallback, useEffect, useState } from "react";
 export const useFetchImg = () => {
   const [images, setImages] = useState([]);
   const [input, setInput] = useState("");
-  const [inicio, setInicio] = useState(true);
+  const [init, setInit] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const peticion = useCallback(async () => {
     const accesKey = "client_id=kjSbjuaVvtgfxXjTgp2Bo_r-paaQD0lDmZLvm-eH5Xg";
@@ -28,13 +29,20 @@ export const useFetchImg = () => {
 
   useEffect(() => {
     peticion();
-  }, [input, peticion]);
+  }, [input, peticion, init]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     setInput(e.target[0].value);
+
+    e.target.reset();
   };
 
-  return [images, handleSubmit];
+  const handleInit = () => {
+    setInput("");
+    setInit(!init);
+  };
+
+  return [images, loading, handleSubmit, handleInit];
 };

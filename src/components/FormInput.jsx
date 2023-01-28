@@ -4,6 +4,7 @@ const FormInput = ({ submit }) => {
   return (
     <form className="d-flex" role="search" onSubmit={submit}>
       <input
+        id="inputUser"
         className="form-control me-2"
         type="search"
         placeholder="Search"

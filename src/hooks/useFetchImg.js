@@ -4,7 +4,6 @@ export const useFetchImg = () => {
   const [images, setImages] = useState([]);
   const [input, setInput] = useState("");
   const [init, setInit] = useState(false);
-  const [loading, setLoading] = useState(true);
 
   const peticion = useCallback(async () => {
     const accesKey = "client_id=kjSbjuaVvtgfxXjTgp2Bo_r-paaQD0lDmZLvm-eH5Xg";
@@ -44,5 +43,5 @@ export const useFetchImg = () => {
     setInit(!init);
   };
 
-  return [images, loading, handleSubmit, handleInit];
+  return [images, handleSubmit, handleInit];
 };

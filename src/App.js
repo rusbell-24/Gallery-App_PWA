@@ -2,11 +2,10 @@ import "./App.css";
 import Card from "./components/Card";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Loading from "./components/Loading";
 import { useFetchImg } from "./hooks/useFetchImg";
 
 function App() {
-  const [images, loading, handleSubmit, handleInit] = useFetchImg();
+  const [images, handleSubmit, handleInit] = useFetchImg();
 
   return (
     <div className="App">

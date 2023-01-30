@@ -1,11 +1,4 @@
 {
-  "short_name": "Gallery",
-  "name": "Gallery Rusbell",
-  "description": "Esta es una PWA de galeria de imagenes desarrollada con React.",
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#212529",
-  "background_color": "#212529",
   "icons": [
     {
       "src": "windows11/SmallTile.scale-100.png",

@@ -4,7 +4,7 @@
 
 La presente es una Progressive Web Apps(PWA) de galeria de imagenes que cuenta con algunas funciones bacicas, tales como la busqueda de imagenes de forma aleatorio o a traves de alguna palabra clave.
 
-##Tecnologias
+## Tecnologias
 
 En el presente proyecto se utilizaron tecnologias modernas tanto para definir la estructura del proyecto como para definir sus diferentes estilos. A continuacion se listan las tecnologia usadas:
 
